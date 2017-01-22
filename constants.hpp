@@ -1,0 +1,7 @@
+#ifndef CONSTANTS_HPP_INCLUDED
+#define CONSTANTS_HPP_INCLUDED
+namespace CONSTANTS_HPP_INCLUDED
+{
+   const int SIZE = 10;
+}
+#endif
