@@ -9,9 +9,8 @@
 #include "constants.hpp"
 
 using constants::SIZE;
-using std::unique_ptr;
 
-unique_ptr deleteRepeat(char[]);
+std::unique_ptr<char[]> deleteRepeat(char[]);
 
 int main()
 {
@@ -28,6 +27,21 @@ int main()
    originalArray[8] = 'b';
    originalArray[9] = 'c';
 
-   noRepeats
+   // Displaying the array before
+   for(int i = 0; i < SIZE; ++i)
+   {
+      std::cout << "[" << originalArray[i] << "] ";
+   }
+   std::cout << std::endl;
 
+   // noRepeats is a unique_ptr returned from the funciton call
+   std::unique_ptr<char[]> noRepeats(deleteRepeat(originalArray));
+
+   // Display the new array
+   for(int i = 0; i < 3; ++i)
+   {
+      std::cout << "[" << noRepeats[i] << "] ";
+   }
+   std::cout << std::endl;
+   return 0;
 }
