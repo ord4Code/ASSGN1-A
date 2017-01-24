@@ -2,12 +2,14 @@
 // The University of Akron, CS II
 // ASSGN1-A Delete Repeat
 
+// INCLUDED FILES AND LIBRARIES
 #include <iostream>
 #include <memory>
 
 #include "delete_repeats.hpp"
 #include "constants.hpp"
 
+// FUNCTIONS
 std::unique_ptr<char[]> deleteRepeat(char[]);
 
 int main()
