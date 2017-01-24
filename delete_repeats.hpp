@@ -1,27 +1,23 @@
 #ifndef DELETE_REPEATS_HPP_INCLUDED
 #define DELETE_REPEATS_HPP_INCLUDED
 /*****************************************************************************
-* Precondition: Array of char                                                *
-* Postcondition: Smart pointer to an array that has all of the repeated      *
-*                elements from the passed array deleted                      *
+* Precondition:  Array of char                                               *
+* Postcondition: Smart pointer to an array that contains all unique values   *
 ******************************************************************************/
 std::unique_ptr<char[]> deleteRepeat(char arrayOfChars[])
 {
    // Create the unique pointer to a dynamically allocated array
    std::unique_ptr<char[]> charPtr(new char[3]);
 
-   // How to create range based for loops?
-   for(int i = 0; i < 3; ++i)
+   int j = 0;
+   for(int i = 0; i < 10; ++i)
    {
-      for(int j = 0; j < 10; ++j)// How can we get access to SIZE
-      {
-         if (arrayOfChars[j] != charPtr[i])
+         if ((arrayOfChars[i] != charPtr[0]) && (arrayOfChars[i] != charPtr[1]) && (arrayOfChars[i] != charPtr[2]))
          {
-            charPtr[i] = arrayOfChars[j];
+            charPtr[j] = arrayOfChars[i];
+            j++;
          }
-      }
    }
-   // Return the array
    return charPtr;
 }
 #endif

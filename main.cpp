@@ -8,12 +8,14 @@
 #include "delete_repeats.hpp"
 #include "constants.hpp"
 
-using constants::SIZE;
-
 std::unique_ptr<char[]> deleteRepeat(char[]);
 
 int main()
 {
+   using std::cout;
+   using std::endl;
+   using constants::SIZE;
+
    // This array will be passed into the function and edited
    char originalArray[SIZE];
    originalArray[0] = 'a';
@@ -28,20 +30,22 @@ int main()
    originalArray[9] = 'c';
 
    // Displaying the array before
+   cout << "Before: ";
    for(int i = 0; i < SIZE; ++i)
    {
-      std::cout << "[" << originalArray[i] << "] ";
+      cout << "[" << originalArray[i] << "] ";
    }
-   std::cout << std::endl;
+   cout << endl;
 
    // noRepeats is a unique_ptr returned from the funciton call
    std::unique_ptr<char[]> noRepeats(deleteRepeat(originalArray));
 
    // Display the new array
+   cout << "After: ";
    for(int i = 0; i < 3; ++i)
    {
-      std::cout << "[" << noRepeats[i] << "] ";
+      cout << "[" << noRepeats[i] << "] ";
    }
-   std::cout << std::endl;
+   cout << endl;
    return 0;
 }
