@@ -16,7 +16,7 @@ int main()
 {
    using std::cout;
    using std::endl;
-   using constants::SIZE;
+   //using constants::SIZE
 
    // This array will be passed into the function and edited
    char originalArray[SIZE];

@@ -3,7 +3,7 @@
 /*********************************************************
 * This file contains the constant(s) used in the program *
 *********************************************************/
-namespace constants
+namespace 
 {
    const int SIZE = 10;
 }
